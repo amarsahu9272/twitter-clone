@@ -35,7 +35,7 @@ export function SigningTemplate({ children, isSignInPage }) {
       open
       PaperProps={{
         style: {
-          borderRadius: 20,
+          borderRadius: 20
         },
       }}
     >

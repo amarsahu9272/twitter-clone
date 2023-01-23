@@ -9,14 +9,20 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 import React, { useState } from "react";
 import "./DialogBox.css";
-import WhatsHappeningTweets from "../../components/whatsHappening/WhatsHappening";
-import TweetFooter from "../../components/dialogbox/DialogBox";
-
+import TwitterButton from "../../atoms/twitterButton/TwitterButton";
+import WhatsHappeningTweets from "../../components/whatsHappeningTweets/WhatsHappeningTweets";
+import TweetFooter from "../../components/tweetFooter/TweetFooter";
 function DialogBox() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <>
       {/* <Button onClick={() => setOpen(true)}>opendialog</Button> */}
+      <TwitterButton
+        onClickAction={() => setOpen(true)}
+        btnText="Tweet"
+        variant="outlined"
+        btnStyle="sidebar__tweet"
+      />
       <Dialog
         className="dialog"
         open={open}
@@ -33,7 +39,11 @@ function DialogBox() {
       >
         <div className="dialogBox">
           <DialogTitle id="dialog-title" className="dialogTitle">
-            <CloseIcon className="closeIcon" style={{ padding: ".5rem" }} />
+            <CloseIcon
+              onClick={() => setOpen(false)}
+              className="closeIcon"
+              style={{ padding: ".5rem" }}
+            />
           </DialogTitle>
           <DialogContent>
             <DialogContentText

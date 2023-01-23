@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { RecoilRoot } from "recoil";
+import App from "./App";
 import DialogBox from "./components/dialogbox/DialogBox";
 import HomePage from "./pages/home";
 import SignInPage from "./pages/signin";
@@ -10,7 +11,8 @@ function Router() {
     <>
       <RecoilRoot>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/" element={<App/>} />
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/dialogbox/DialogBox" element={<DialogBox />} />
