@@ -26,7 +26,7 @@ function Post({ profiledata }) {
 
   const setProfileData = useSetRecoilState(profileDataAtom);
   const handleProfileClick = () => {
-    console.log(profiledata);
+    // console.log(profiledata);
     setProfileData(profiledata);
   };
   const comments = () => {
