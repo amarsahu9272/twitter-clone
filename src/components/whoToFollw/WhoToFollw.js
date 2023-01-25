@@ -1,29 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import profileImge from "../../images/Amr.jpg";
 import "./WhoToFollw.css";
 import { Avatar } from "@mui/material";
-import TwitterButton from '../../atoms/twitterButton/TwitterButton'
+import TwitterButton from "../../atoms/twitterButton/TwitterButton";
 import { whomfollow } from "../../const";
 function WhoToFollw() {
+  let [followsData, setFollowsData] = useState(whomfollow);
+  function handleFollowButton(fData) {
+    // setFollowButtonData(!followButtonAtomData);
+
+    const indexOfClickedFollow = followsData.findIndex(
+      (index) => index.followUserName === fData.followUserName
+    );
+    // console.log(fData.followUserName);
+    followsData[indexOfClickedFollow].isFollow =
+      !followsData[indexOfClickedFollow].isFollow;
+    setFollowsData([...followsData]);
+    // console.log(followsData)
+  }
   return (
     <div className="whoToFollwContainer">
       <h2>Who to follow</h2>
       {/* <TwitterEmbedded/> */}
       <div className="follow-p">
-        {whomfollow.map((fData, i) => (
+        {followsData.map((fData, i) => (
           <div className="following">
             <Avatar src={profileImge} />
-            <div className="follows" key={i}>
+            <div className="follows">
               <h3>{fData.followName}</h3>
               <p>{fData.followUserName}</p>
               <span>{fData.folloDesignation}</span>
             </div>
+
             <TwitterButton
-              onClickAction=""
-              btnText="Follow"
+              keys={i}
+              onClickAction={() => handleFollowButton(fData)}
+              btnText={!fData.isFollow ? "Follow" : "Following"}
               variant="outlined"
-              btnStyle="followButton"
+              btnStyle={!fData.isFollow ? "followButton" : "followingButton"}
             />
+
+            {/* <button onClick={() => handleFollowButton(fData)}>
+              {!fData.isFollow ? "follow" : "Following"}
+            </button> */}
           </div>
         ))}
       </div>

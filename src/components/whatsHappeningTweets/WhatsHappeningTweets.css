@@ -16,3 +16,7 @@
     padding: .625rem;
     outline: none;
 }
+.avatar{
+    cursor: pointer ;
+
+}
