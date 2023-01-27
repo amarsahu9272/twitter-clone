@@ -18,12 +18,12 @@ function TweetBox() {
     e.preventDefault();
     let obj = {
       profilePic: profilePic,
-      name: "Amar Sahu",
+      name: "Amar",
       verified: true,
       handlerName: "@amarsahu",
       organization: "Student Organization",
-      followers: 200,
-      followings: 400,
+      followers: 40,
+      followings: 4,
       joinedDate: "21 Jan 2023",
       tweets: [
         {
