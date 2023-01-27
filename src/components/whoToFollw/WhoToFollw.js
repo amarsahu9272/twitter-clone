@@ -24,7 +24,7 @@ function WhoToFollw() {
       {/* <TwitterEmbedded/> */}
       <div className="follow-p">
         {followsData.map((fData, i) => (
-          <div className="following">
+          <div key={i} className="following">
             <Avatar src={profileImge} />
             <div className="follows">
               <h3>{fData.followName}</h3>

@@ -14,14 +14,16 @@ function Post({ profiledata }) {
     name,
     verified,
     handlerName,
-    joinedDate,
     // organization,
-    tweetText,
-    tweetPic,
+    followers,
+    followings,
+    joinedDate,
+    tweets
   } = profiledata;
-  let [comment, setComment] = useState(1);
-  let [retweet, setRetweet] = useState(2);
-  let [like, setLike] = useState(3);
+  const [Tweets,setTweets]=useState(tweets)
+  let [comment, setComment] = useState(Tweets[0].tweetCount);
+  let [retweet, setRetweet] = useState(Tweets[0].retweetCount);
+  let [like, setLike] = useState(Tweets[0].likesCount);
   let [share, setShare] = useState(4);
 
   const setProfileData = useSetRecoilState(profileDataAtom);
@@ -52,16 +54,18 @@ function Post({ profiledata }) {
             <h3>
               {name}{" "}
               <span className="postHeaderSpecial">
-                {verified && <VerifiedUserIcon className="postBadge" />} @
+                {verified && <VerifiedUserIcon className="postBadge" />}
                 {handlerName} - {joinedDate}
               </span>
             </h3>
           </div>
           <div className="postHeaderDescription">
-            <p>{tweetText}</p>
+            <p>{Tweets[0].tweetText}</p>
           </div>
         </div>
-        {tweetPic && <img className="img" src={tweetPic} alt="" />}
+        {Tweets[0].tweetPic && (
+          <img className="img" src={Tweets[0].tweetPic} alt="" />
+        )}
         <div className="postFooter">
           <div className="comment">
             <ChatBubbleOutlineIcon

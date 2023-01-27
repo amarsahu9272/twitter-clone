@@ -1,49 +1,63 @@
 import React, { useState } from "react";
 import "./TweetBox.css";
-import profileImage from "../../images/Amr.jpg";
+import profilePic from "../../images/Amr.jpg";
+// import profileImage from "../../images/Amr.jpg";
 import WhatsHappeningTweets from "../whatsHappeningTweets/WhatsHappeningTweets";
 import TweetFooter from "../tweetFooter/TweetFooter";
 import ShowTweet from "../../atoms/showTweet/ShowTweet";
+import { useRecoilState } from "recoil";
+import { selectFile, totalTweets } from "../../recoil-states";
+
 function TweetBox() {
-  const [formValues, setFormValues] = useState({
-    displayName: "",
-    username: "",
-    verified: "",
-    text: "",
-    image: "",
-    avatar: "",
-  });
+  const [tweets, setTweets] = useRecoilState(totalTweets);
+  const [selectedFile, setSelectedFile] = useRecoilState(selectFile);
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
 
   const sendTweet = (e) => {
     e.preventDefault();
-    setFormValues({
-      ...formValues,
-      displayName: "Amar",
-      username: "Sahu",
+    let obj = {
+      profilePic: profilePic,
+      name: "Amar Sahu",
       verified: true,
-      text: tweetMessage,
-      image: tweetImage,
-      avatar: profileImage,
-    });
-    let post = JSON.parse(localStorage.getItem("tweet")) || [];
-    post.push(formValues);
-    localStorage.setItem("tweet", JSON.stringify(post));
+      handlerName: "@amarsahu",
+      organization: "Student Organization",
+      followers: 200,
+      followings: 400,
+      joinedDate: "21 Jan 2023",
+      tweets: [
+        {
+          tweetText: tweetMessage,
+          tweetPic: selectedFile,
+          tweetCount: 100,
+          retweetCount: 100,
+          likesCount: 100,
+          viewsCount: "102k",
+          TweetReplies: [
+            {
+              name: "Arjun ranavat",
+              handlerName: "@Arjun6787",
+              tweetReplyText:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            },
+            {
+              name: "charls Darvin",
+              handlerName: "@charls",
+              tweetReplyText:
+                "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            },
+          ],
+        },
+      ],
+    };
     setTweetMessage("");
     setTweetImage("");
+    setTweets([obj, ...tweets]);
+    setSelectedFile(null);
   };
   return (
     <div className="tweetBox">
       <form onSubmit={sendTweet}>
-        {/* <Button
-          onClick={sendTweet}
-          type="submit"
-          className="tweetBox__tweetButton"
-        >
-          Tweet
-        </Button> */}
-
         <WhatsHappeningTweets
           btnStyle="WhatsHappeningTweets"
           values={tweetMessage}

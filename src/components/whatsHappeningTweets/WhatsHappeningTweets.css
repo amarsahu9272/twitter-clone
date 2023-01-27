@@ -16,7 +16,14 @@
     padding: .625rem;
     outline: none;
 }
-.avatar{
-    cursor: pointer ;
 
+.avatar {
+    cursor: pointer;
+
+}
+
+.selectImage>img {
+    width: 400px;
+    height: 250px;
+    object-fit: contain;
 }

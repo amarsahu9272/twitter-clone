@@ -12,12 +12,15 @@ function Sidebar() {
       {/* <TwitterIcon /> */}
       <TwitterIconn />
       {sideBarIcons.map((icon, i) => (
-        <SidebarOption
-          keys={i}
-          active={icon.active}
-          Icon={icon.Icons}
-          text={icon.text}
-        />
+        <div key={i}>
+          {" "}
+          <SidebarOption
+            keys={i}
+            active={icon.active}
+            Icon={icon.Icons}
+            text={icon.text}
+          />
+        </div>
       ))}
       <DialogBox />
       <ProfileButton />

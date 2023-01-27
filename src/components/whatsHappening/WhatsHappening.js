@@ -34,7 +34,7 @@ function WhatsHappening() {
       {/* <TwitterEmbedded/> */}
       <div className="trends-p">
         {whatHappeningData.map(
-          (wData) =>
+          (wData, i) =>
             !wData.isNotInterested && (
               <div key={whatHappeningData.id} className="trending">
                 <div className="trends">
@@ -42,8 +42,11 @@ function WhatsHappening() {
                   <h3>#{wData.trending}</h3>
                   <span>{wData.noTweet} Tweets</span>
                 </div>
-                <p onClick={popoverProfileButton}>...</p>
+                <p key={i + 1} onClick={popoverProfileButton}>
+                  ...
+                </p>
                 <Popover
+                  key={i + 2}
                   open={Boolean(anchor)}
                   anchorEl={anchor}
                   onClose={() => setAnchor(null)}
