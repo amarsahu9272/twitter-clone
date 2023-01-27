@@ -2,21 +2,21 @@ import React from "react";
 import "./ProfilePage.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ProfileSection from "../../components/profileSection/ProfileSection1"
-import { useSetRecoilState } from "recoil";
-import { isProfileClickedAtom } from "../../recoil-states";
+import { useNavigate } from "react-router-dom";
+
 
 function ProfilePage() {
-  const setProfileRecoil = useSetRecoilState(isProfileClickedAtom);
-  const handleArrowClick = () => {
-    setProfileRecoil(true);
-  };
+  const navigate =useNavigate()
+ 
   return (
     <div className="profilePage">
       <div className="profileHeader">
         <div>
           <h2>
             <span>
-              <ArrowBackIcon className="arrowIcon" onClick={handleArrowClick} />
+              <ArrowBackIcon className="arrowIcon"  
+              onClick={()=>navigate(-1)}
+              />
             </span>
             <span>Amar Sahu</span>
           </h2>

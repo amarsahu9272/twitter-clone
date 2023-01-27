@@ -2,9 +2,8 @@ import React from "react";
 import profileImge from "../../images/Amr.jpg";
 import "./WhatsHappeningTweets.css";
 import { Avatar } from "@mui/material";
-import { useSetRecoilState } from "recoil";
-import { useNavigate } from "react-router-dom";
-import { isProfileClickedAtom } from "../../recoil-states";
+import { Link } from "react-router-dom";
+
 
 function WhatsHappeningTweets({
   values,
@@ -12,17 +11,12 @@ function WhatsHappeningTweets({
   tweetImage,
   handleTweetImage,
 }) {
-  const setProfileRecoil = useSetRecoilState(isProfileClickedAtom);
-  const navigate = useNavigate();
-
-  const handleProfileClick = () => {
-    setProfileRecoil(false);
-    navigate("/");
-  };
   return (
     <>
       <div className="WhatsHappeningTweets">
-        <Avatar src={profileImge} onClick={handleProfileClick} className="avatar"/>
+        <Link to="/ProfilePage">
+          <Avatar src={profileImge} className="avatar" />
+        </Link>
         <input
           onChange={handleChange}
           value={values}

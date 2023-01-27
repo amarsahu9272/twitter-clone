@@ -12,6 +12,7 @@
 .searchTwitter>input {
     border: none;
     background-color: var(--twitter-background);
+    outline: none;
 }
 
 .searchTwitterSearchIcon {
