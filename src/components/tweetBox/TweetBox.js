@@ -16,6 +16,7 @@ function TweetBox() {
 
   const sendTweet = (e) => {
     e.preventDefault();
+    console.log("TweetMessage",tweetMessage)
     let obj = {
       profilePic: profilePic,
       name: "Amar",
@@ -53,6 +54,7 @@ function TweetBox() {
     setTweetMessage("");
     setTweetImage("");
     setTweets([obj, ...tweets]);
+    // console.log([obj, ...tweets])
     setSelectedFile(null);
   };
   return (

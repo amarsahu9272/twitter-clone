@@ -15,15 +15,16 @@ function Post({ profiledata }) {
     verified,
     handlerName,
     // organization,
-    followers,
-    followings,
+    // followers,
+    // followings,
     joinedDate,
     tweets
   } = profiledata;
-  const [Tweets,setTweets]=useState(tweets)
-  let [comment, setComment] = useState(Tweets[0].tweetCount);
-  let [retweet, setRetweet] = useState(Tweets[0].retweetCount);
-  let [like, setLike] = useState(Tweets[0].likesCount);
+  // const tweets = tweets
+  // const [Tweets,setTweets]=useState(tweets)
+  let [comment, setComment] = useState(tweets[0].tweetCount);
+  let [retweet, setRetweet] = useState(tweets[0].retweetCount);
+  let [like, setLike] = useState(tweets[0].likesCount);
   let [share, setShare] = useState(4);
 
   const setProfileData = useSetRecoilState(profileDataAtom);
@@ -32,16 +33,16 @@ function Post({ profiledata }) {
     setProfileData(profiledata);
   };
   const comments = () => {
-    setComment(comment++);
+    setComment(comment+1);
   };
   const retweets = () => {
-    setRetweet(retweet++);
+    setRetweet(retweet+1);
   };
   const likes = () => {
-    setLike(like++);
+    setLike(like+1);
   };
   const shares = () => {
-    setShare(share++);
+    setShare(share+1);
   };
   return (
     <div className="post">
@@ -60,11 +61,11 @@ function Post({ profiledata }) {
             </h3>
           </div>
           <div className="postHeaderDescription">
-            <p>{Tweets[0].tweetText}</p>
+            <p>{tweets[0].tweetText}</p>
           </div>
         </div>
-        {Tweets[0].tweetPic && (
-          <img className="img" src={Tweets[0].tweetPic} alt="" />
+        {tweets[0].tweetPic && (
+          <img className="img" src={tweets[0].tweetPic} alt="" />
         )}
         <div className="postFooter">
           <div className="comment">
