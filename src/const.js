@@ -100,6 +100,45 @@ export const whomfollow = [
   },
 ];
 
+export const trendinsData = [
+  {
+      id : 1 ,
+      trender : '#Shahrukh khan',
+      tweets : '102k',
+      isNotIntrested : false
+  },
+  {
+      id :2 ,
+      trender : '#Pathan',
+      tweets : '30k',
+      isNotIntrested : false
+  },
+  {
+      id : 3 ,
+      trender : '#BioDiversity',
+      tweets : '12k',
+      isNotIntrested : false
+  },
+  {
+      id :4,
+      trender : '#SRK',
+      tweets : '30k',
+      isNotIntrested : false
+  },
+  {
+      id :5,
+      trender : '#Dipika',
+      tweets : '102k',
+      isNotIntrested : false
+  },
+  {
+      id :6,
+      trender : '#IPL',
+      tweets : '300k',
+      isNotIntrested : false
+  }
+]
+
 export const whatsHappenigData = [
   {
     trends: "Entertainment · Trending",

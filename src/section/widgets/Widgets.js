@@ -1,8 +1,9 @@
 import React from "react";
 import SearchTwitter from "../../atoms/searchTwitter/SearchTwitter";
 import "./Widgets.css";
-import WhatsHappening from '../../components/whatsHappening/WhatsHappening'
+// import WhatsHappening from '../../components/whatsHappening/WhatsHappening'
 import WhoToFollw from "../../components/whoToFollw/WhoToFollw";
+import WhatsHappening from '../../components/whats-happening/whats-happening'
 
 
 function Widgets() {
@@ -11,7 +12,8 @@ function Widgets() {
       <div className="feed_header">
         <SearchTwitter/>
       </div>
-      <WhatsHappening />
+      {/* <WhatsHappening /> */}
+      <WhatsHappening/>
       <WhoToFollw />
     </div>
   );
