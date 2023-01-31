@@ -30,10 +30,10 @@ function TweetBox() {
         {
           tweetText: tweetMessage,
           tweetPic: selectedFile,
-          tweetCount: 100,
-          retweetCount: 100,
-          likesCount: 100,
-          viewsCount: "102k",
+          tweetCount: 0,
+          retweetCount: 0,
+          likesCount: 0,
+          viewsCount: "0",
           TweetReplies: [
             {
               name: "Arjun ranavat",

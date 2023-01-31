@@ -27,7 +27,7 @@ function Post({ profiledata }) {
   let [comment, setComment] = useState(tweets[0].tweetCount);
   let [retweet, setRetweet] = useState(tweets[0].retweetCount);
   let [like, setLike] = useState(tweets[0].likesCount);
-  let [share, setShare] = useState(4);
+  let [share, setShare] = useState(0);
   let [True, setTrue] = useState(false);
 
   const setProfileData = useSetRecoilState(profileDataAtom);
@@ -82,7 +82,7 @@ function Post({ profiledata }) {
               style={{ padding: ".5rem" }}
             />
             <span className="postIcon" value={comment}>
-              {comment}K
+              {comment}
             </span>
           </div>
           <div className="retweet">
@@ -93,7 +93,7 @@ function Post({ profiledata }) {
               style={{ padding: ".5rem" }}
             />
             <span className="postIcon" value={retweet}>
-              {retweet}K
+              {retweet}
             </span>
           </div>
           {!True ? (
@@ -105,7 +105,7 @@ function Post({ profiledata }) {
                 style={{ padding: ".5rem" }}
               />
               <span className="postIcon" value={like}>
-                {like}K
+                {like}
               </span>
             </div>
           ) : (
@@ -117,7 +117,7 @@ function Post({ profiledata }) {
                 style={{ padding: ".5rem" }}
               />
               <span className="postIcon" value={like}>
-                {like}K
+                {like}
               </span>
             </div>
           )}
@@ -129,7 +129,7 @@ function Post({ profiledata }) {
               style={{ padding: ".5rem" }}
             />
             <span className="postIcon" value={share}>
-              {share}K
+              {share}
             </span>
           </div>
         </div>

@@ -18,7 +18,7 @@ function WhatsHappeningTweets({
   return (
     <>
       <div className="WhatsHappeningTweets">
-        <Link to="/ProfilePage">
+        <Link to="/DemoProfilePage">
           <Avatar src={profileImge} className="avatar" />
         </Link>
         <input

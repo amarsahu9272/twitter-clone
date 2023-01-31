@@ -7,6 +7,7 @@ import SignUpPage from "./pages/signup";
 import ProfilePage from "./section/profilePage/ProfilePage";
 import NoMatchRoute from "./NoMatchRoute";
 import Feed from "./section/feed/Feed";
+import DemoProfilePage from "./components/demoProfilePage/DemoProfilePage";
 
 function Router() {
   return (
@@ -15,7 +16,7 @@ function Router() {
         <Routes>
           <Route path="/" element={<HomePage />}>
             <Route index  element={<Feed />} />
-            {/* <Route path="ProfilePage" element={<ProfilePage />} /> */}
+            <Route path="DemoProfilePage" element={<DemoProfilePage />} />
             <Route path=":handlerName" element={<ProfilePage />} />
           </Route>
           <Route path="/signin" element={<SignInPage />} />
