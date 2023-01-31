@@ -82,6 +82,9 @@
     background-color: rgb(246, 206, 206);
     border-radius: 50%;
 }
+.FavouriteIconClick{
+    color: red;
+}
 
 .publishIcon:hover {
     color: rgb(5, 206, 156);

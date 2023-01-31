@@ -8,6 +8,7 @@ import PublishIcon from "@mui/icons-material/Publish";
 import { Avatar } from "@mui/material";
 import { useSetRecoilState } from "recoil";
 import { profileDataAtom } from "../../recoil-states";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 function Post({ profiledata }) {
   const {
     profilePic,
@@ -18,7 +19,7 @@ function Post({ profiledata }) {
     // followers,
     // followings,
     joinedDate,
-    tweets
+    tweets,
   } = profiledata;
   // const tweets = tweets
   // const [Tweets,setTweets]=useState(tweets)
@@ -26,6 +27,7 @@ function Post({ profiledata }) {
   let [retweet, setRetweet] = useState(tweets[0].retweetCount);
   let [like, setLike] = useState(tweets[0].likesCount);
   let [share, setShare] = useState(4);
+  let [True, setTrue] = useState(false);
 
   const setProfileData = useSetRecoilState(profileDataAtom);
   const handleProfileClick = () => {
@@ -33,16 +35,17 @@ function Post({ profiledata }) {
     setProfileData(profiledata);
   };
   const comments = () => {
-    setComment(comment+1);
+    setComment(comment + 1);
   };
   const retweets = () => {
-    setRetweet(retweet+1);
+    setRetweet(retweet + 1);
   };
   const likes = () => {
-    setLike(like+1);
+    !True ? setLike(like + 1) : setLike(like - 1);
+    setTrue(!True);
   };
   const shares = () => {
-    setShare(share+1);
+    setShare(share + 1);
   };
   return (
     <div className="post">
@@ -90,17 +93,31 @@ function Post({ profiledata }) {
               {retweet}K
             </span>
           </div>
-          <div className="like">
-            <FavoriteBorderIcon
-              onClick={likes}
-              fontSize="small"
-              className="FavouriteIcon"
-              style={{ padding: ".5rem" }}
-            />
-            <span className="postIcon" value={like}>
-              {like}K
-            </span>
-          </div>
+          {!True ? (
+            <div className="like">
+              <FavoriteBorderIcon
+                onClick={likes}
+                fontSize="small"
+                className="FavouriteIcon"
+                style={{ padding: ".5rem" }}
+              />
+              <span className="postIcon" value={like}>
+                {like}K
+              </span>
+            </div>
+          ) : (
+            <div className="like">
+              <FavoriteIcon
+                onClick={likes}
+                fontSize="small"
+                className="FavouriteIconClick"
+                style={{ padding: ".5rem" }}
+              />
+              <span className="postIcon" value={like}>
+                {like}K
+              </span>
+            </div>
+          )}
           <div className="share">
             <PublishIcon
               onClick={shares}
