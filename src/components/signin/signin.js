@@ -59,6 +59,7 @@ export default function SignInComponent () {
             alert('Wrong password !!')
             return
         }
+        
         setUserLoggedInStatus(true)
         nevigate('/')
     }

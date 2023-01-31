@@ -102,106 +102,106 @@ export const whomfollow = [
 
 export const trendinsData = [
   {
-      id : 1 ,
-      trender : '#Shahrukh khan',
-      tweets : '102k',
-      isNotIntrested : false
+    id: 1,
+    trender: "#Shahrukh khan",
+    tweets: "102k",
+    isNotIntrested: false,
   },
   {
-      id :2 ,
-      trender : '#Pathan',
-      tweets : '30k',
-      isNotIntrested : false
+    id: 2,
+    trender: "#Pathan",
+    tweets: "30k",
+    isNotIntrested: false,
   },
   {
-      id : 3 ,
-      trender : '#BioDiversity',
-      tweets : '12k',
-      isNotIntrested : false
+    id: 3,
+    trender: "#BioDiversity",
+    tweets: "12k",
+    isNotIntrested: false,
   },
   {
-      id :4,
-      trender : '#SRK',
-      tweets : '30k',
-      isNotIntrested : false
+    id: 4,
+    trender: "#SRK",
+    tweets: "30k",
+    isNotIntrested: false,
   },
   {
-      id :5,
-      trender : '#Dipika',
-      tweets : '102k',
-      isNotIntrested : false
+    id: 5,
+    trender: "#Dipika",
+    tweets: "102k",
+    isNotIntrested: false,
   },
   {
-      id :6,
-      trender : '#IPL',
-      tweets : '300k',
-      isNotIntrested : false
-  }
-]
+    id: 6,
+    trender: "#IPL",
+    tweets: "300k",
+    isNotIntrested: false,
+  },
+];
 
 export const whatsHappenigData = [
   {
-    id :1,
+    id: 1,
     trends: "Entertainment · Trending",
     trending: "Amitabh Bachchan",
     noTweet: "123K",
-    isNotIntrested : false
+    isNotIntrested: false,
   },
   {
-    id :2,
+    id: 2,
     trends: "Sports · Trending",
     trending: "AINassr",
     noTweet: "30.1K",
-    isNotIntrested : false
+    isNotIntrested: false,
   },
   {
-    id :3,
+    id: 3,
     trends: "Trending in India",
     trending: "BBCDocumentary",
     noTweet: "135K",
-    isNotIntrested : false
+    isNotIntrested: false,
   },
   {
-    id :4,
+    id: 4,
     trends: "Entertainment · Trending",
     trending: "Amitabh Bachchan",
     noTweet: "123K",
-    isNotIntrested : false
+    isNotIntrested: false,
   },
   {
-    id :5,
+    id: 5,
     trends: "Sports · Trending",
     trending: "AINassr",
     noTweet: "30.1K",
-    isNotIntrested : false
+    isNotIntrested: false,
   },
   {
-    id :6,
+    id: 6,
     trends: "Trending in India",
     trending: "BBCDocumentary",
     noTweet: "135K",
-    isNotIntrested : false
+    isNotIntrested: false,
   },
   {
-    id :7,
+    id: 7,
     trends: "Entertainment · Trending",
     trending: "Amitabh Bachchan",
     noTweet: "123K",
-    isNotIntrested : false
+    isNotIntrested: false,
   },
   {
-    id :8,
+    id: 8,
     trends: "Sports · Trending",
     trending: "AINassr",
     noTweet: "30.1K",
-    isNotIntrested : false
+    isNotIntrested: false,
   },
   {
-    id :9,
+    id: 9,
     trends: "Trending in India",
     trending: "BBCDocumentary",
     noTweet: "135K",
-    isNotIntrested : false
+    isNotIntrested: false,
   },
 ];
 
@@ -307,7 +307,8 @@ export const tweetPosts = [
     ],
   },
   {
-    profilePic: "https://lh3.googleusercontent.com/KdBVQy9qYOUvkWIAZVU0xxiCSfHlSIyxubAi_fDQguitxEOSbHdJS0nhZ5XxVuhggFIGnyWfQd6e_THednJT0r1dYMabudzArp8mimZxguSM4iHTodAVCxaf3TqPKl3Lk4HJ2wR1zQ=w1920-h1080",
+    profilePic:
+      "https://lh3.googleusercontent.com/KdBVQy9qYOUvkWIAZVU0xxiCSfHlSIyxubAi_fDQguitxEOSbHdJS0nhZ5XxVuhggFIGnyWfQd6e_THednJT0r1dYMabudzArp8mimZxguSM4iHTodAVCxaf3TqPKl3Lk4HJ2wR1zQ=w1920-h1080",
     name: "Mukund",
     handlerName: "@kumarmukund",
     organization: "",
@@ -343,6 +344,7 @@ export const tweetPosts = [
     ],
   },
   {
+    profilePic:"https://lh3.googleusercontent.com/pasZP7Q7djnEfYziWLb-U5F1Ga_YpGXbxoggi_H3YuCFZeXPBij6l7SuJRnh39osyU0omD-OON3O9w46qNWJ7eFhNwo1LOe0PU7gANdMGHNYgo6mPlIVJKk1AoJJVy2D7bptiaUqpw=w1920-h1080",
     name: "Usain St. Leo Bolt",
     handlerName: "@usainbolt",
     organization: "",
@@ -376,7 +378,7 @@ export const tweetPosts = [
       },
     ],
   },
-  {
+  {profilePic:"https://lh3.googleusercontent.com/4aSGO7MxlG112HGNyNS05HcVDtz7XAC8bUlieGaFHSyCMYJh8GVRR17I5OhcyVvxWWjR9-Ibu4vgmZhRe6rcPfJT-qAFi6TvTDAlXpLu_vooIsm3CMdTdB7JMYvheeI9474Fy9ZxFw=w1920-h1080",
     name: "Andrew Elliott",
     handlerName: "@andrewje_home",
     organization: "",
@@ -411,6 +413,7 @@ export const tweetPosts = [
     ],
   },
   {
+    profilePic:"https://lh3.googleusercontent.com/Jt-Vf0_wj_T3HgLPsjJz-sqzds1WB_nxZR1BRG_Fy2MetPgymruJINllajLUWA9KhYdScF_ZIgbl-4ZrGw4DFI5Y4q3uImG5_-H4okqGh4Lo14AB4Fwhx8lUqSWhfaYuDVI1Qd-CHg=w1920-h1080",
     name: "RVCJ Media",
     handlerName: "@RVCJ_FB",
     organization: "",
