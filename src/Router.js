@@ -15,7 +15,8 @@ function Router() {
         <Routes>
           <Route path="/" element={<HomePage />}>
             <Route index  element={<Feed />} />
-            <Route path="ProfilePage" element={<ProfilePage />} />
+            {/* <Route path="ProfilePage" element={<ProfilePage />} /> */}
+            <Route path=":handlerName" element={<ProfilePage />} />
           </Route>
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />

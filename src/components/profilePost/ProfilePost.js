@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import "./Post.css";
+import React,{ useState } from "react";
+import "./ProfilePost.css";
+
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import RepeatIcon from "@mui/icons-material/Repeat";
@@ -10,7 +11,7 @@ import { Avatar } from "@mui/material";
 import { useSetRecoilState } from "recoil";
 import { profileDataAtom } from "../../recoil-states";
 import { Link } from "react-router-dom";
-function Post({ profiledata }) {
+function ProfilePost({ Profiledata }) {
   const {
     profilePic,
     name,
@@ -21,20 +22,18 @@ function Post({ profiledata }) {
     // followings,
     joinedDate,
     tweets,
-  } = profiledata;
-  // const tweets = tweets
-  // const [Tweets,setTweets]=useState(tweets)
+  } = Profiledata;
   let [comment, setComment] = useState(tweets[0].tweetCount);
   let [retweet, setRetweet] = useState(tweets[0].retweetCount);
   let [like, setLike] = useState(tweets[0].likesCount);
   let [share, setShare] = useState(4);
   let [True, setTrue] = useState(false);
 
-  const setProfileData = useSetRecoilState(profileDataAtom);
-  const handleProfileClick = () => {
-    // console.log(profiledata);
-    setProfileData(profiledata);
-  };
+//   const setProfileData = useSetRecoilState(profileDataAtom);
+//   const handleProfileClick = () => {
+//     // console.log(profiledata);
+//     setProfileData(profiledata);
+//   };
   const comments = () => {
     setComment(comment + 1);
   };
@@ -50,16 +49,15 @@ function Post({ profiledata }) {
   };
   return (
     <div className="post">
-      <Link to={`/${handlerName}`}>
-        <div className="postAvatar" onClick={handleProfileClick}>
-          <Avatar src={profilePic} />
+        <div className="postAvatar" >
+        <Avatar src={profilePic} />
         </div>
-      </Link>
+      
       <div className="postBody">
         <div className="postHeader">
           <div className="postHeaderText">
             <h3>
-              {name}{" "}
+              {name}
               <span className="postHeaderSpecial">
                 {verified && <VerifiedUserIcon className="postBadge" />}
                 {handlerName} - {joinedDate}
@@ -138,4 +136,4 @@ function Post({ profiledata }) {
   );
 }
 
-export default Post;
+export default ProfilePost;
