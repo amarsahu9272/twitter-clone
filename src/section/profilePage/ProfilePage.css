@@ -40,135 +40,13 @@
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.post {
+.profilePost{
     display: flex;
-    align-items: flex-start;
-    border-bottom: 0.063rem solid var(--twitter-background);
-    padding-bottom: 0.625rem;
 }
 
-.post:hover {
-    background-color: rgb(247, 244, 244);
-}
 
-.postBody {
-    flex: 1;
-    padding: 0.625rem;
-    position: relative;
-}
 
-.postBody>img {
-    border-radius: 1.25rem;
-}
 
-.postFooter {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.25rem;
-}
 
-.postHeaderDescription {
-    margin-bottom: 0.625rem;
-    font-size: 15px;
-}
 
-.postHeaderText>h3 {
-    font-size: 0.938rem;
-    margin-bottom: 0.313rem;
-}
 
-.postBadge {
-    font-size: 0.875rem !important;
-    color: var(--twitter-color);
-}
-
-.postHeaderSpecial {
-    font-weight: 600;
-    font-size: 0.75rem;
-    color: gray;
-}
-
-.postAvatar {
-    padding: 1.25rem;
-}
-
-/* .img {
-    width: 32rem;
-    height: 30rem;
-} */
-
-.img {
-    width: 100%;
-    height: 100%rem;
-    object-fit: contain;
-    border-radius: 1.25rem;
-}
-
-.chatBubble:hover {
-    color: var(--twitter-color);
-    /* background-color: #e8f5fe; */
-    background-color: rgb(214, 248, 252);
-    border-radius: 50%;
-}
-
-.repeatIcon:hover {
-    color: rgb(5, 206, 156);
-    /* background-color: #e8f5fe; */
-    background-color: rgb(200, 248, 236);
-    border-radius: 50%;
-}
-
-.FavouriteIcon:hover {
-    color: red;
-    /* background-color: #e8f5fe; */
-    background-color: rgb(246, 206, 206);
-    border-radius: 50%;
-}
-
-.FavouriteIconClick {
-    color: red;
-}
-
-.publishIcon:hover {
-    color: rgb(5, 206, 156);
-    /* background-color: #e8f5fe; */
-    background-color: rgb(200, 248, 236);
-    border-radius: 50%;
-
-}
-
-.postIcon {
-    margin-bottom: .3rem;
-    /* color: red; */
-}
-
-.comment {
-    display: flex;
-    align-items: center;
-}
-
-.retweet {
-    display: flex;
-    align-items: center;
-}
-
-.like {
-    display: flex;
-    align-items: center;
-}
-
-.share {
-    display: flex;
-    align-items: center;
-}

@@ -1,4 +1,4 @@
-.post {
+.profilePost {
     flex: .5;
     display: flex;
     align-items: flex-start;
@@ -6,49 +6,49 @@
     padding-bottom: 0.625rem;
 }
 
-.post:hover {
+.profilePost:hover {
     background-color: rgb(247, 244, 244);
     cursor: pointer;
 }
 
-.postBody {
+.profilePostBody {
     flex: 1;
     padding: 0.625rem;
     position: relative;
 }
 
-.postBody>img {
+.profilePostBody>img {
     border-radius: 1.25rem;
 }
 
-.postFooter {
+.profilePostFooter {
     display: flex;
     justify-content: space-between;
     margin-top: 1.25rem;
 }
 
-.postHeaderDescription {
+.profilePostHeaderDescription {
     margin-bottom: 0.625rem;
     font-size: 15px;
 }
 
-.postHeaderText>h3 {
+.profilePostHeaderText>h3 {
     font-size: 0.938rem;
     margin-bottom: 0.313rem;
 }
 
-.postBadge {
+.profilePostBadge {
     font-size: 0.875rem !important;
     color: var(--twitter-color);
 }
 
-.postHeaderSpecial {
+.profilePostHeaderSpecial {
     font-weight: 600;
     font-size: 0.75rem;
     color: gray;
 }
 
-.postAvatar {
+.profilePostAvatar {
     padding: 1.25rem;
 }
 
@@ -57,38 +57,38 @@
     height: 30rem;
 } */
 
-.img {
+.profilePostImg {
     width: 100%;
     height: 100%;
     object-fit: contain;
     border-radius: 1.25rem;
 }
 
-.chatBubble:hover {
+.profilePostchatBubble:hover {
     color: var(--twitter-color);
     /* background-color: #e8f5fe; */
     background-color: rgb(214, 248, 252);
     border-radius: 50%;
 }
 
-.repeatIcon:hover {
+.profilePostrepeatIcon:hover {
     color: rgb(5, 206, 156);
     /* background-color: #e8f5fe; */
     background-color: rgb(200, 248, 236);
     border-radius: 50%;
 }
 
-.FavouriteIcon:hover {
+.profilePostFavouriteIcon:hover {
     color: red;
     /* background-color: #e8f5fe; */
     background-color: rgb(246, 206, 206);
     border-radius: 50%;
 }
-.FavouriteIconClick{
+.profilePostFavouriteIconClick{
     color: red;
 }
 
-.publishIcon:hover {
+.profilePostpublishIcon:hover {
     color: rgb(5, 206, 156);
     /* background-color: #e8f5fe; */
     background-color: rgb(200, 248, 236);
@@ -96,27 +96,27 @@
 
 }
 
-.postIcon {
+.profilePostIcon {
     margin-bottom: .3rem;
     /* color: red; */
 }
 
-.comment {
+.profilePostcomment {
     display: flex;
     align-items: center;
 }
 
-.retweet {
+.profilePostretweet {
     display: flex;
     align-items: center;
 }
 
-.like {
+.profilePostlike {
     display: flex;
     align-items: center;
 }
 
-.share {
+.profilePostshare {
     display: flex;
     align-items: center;
 }

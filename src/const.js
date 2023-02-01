@@ -216,7 +216,7 @@ export const tweetPosts = [
     profilePic: profilePic,
     name: "Amar Sahu",
     verified: true,
-    handlerName: "@amarsahu",
+    handlerName: "@amarsahu1997",
     organization: "United States government organization",
     followers: 200,
     followings: 400,

@@ -6,11 +6,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { totalTweets } from "../../recoil-states";
 // import Post from "../../components/post/Post";
-import ProfilePost from "../../components/profilePost/ProfilePost";
+// import ProfilePost from "../../components/profilePost/ProfilePost";
+import Post from "../../components/post/Post";
 
 function ProfilePage() {
   const navigate = useNavigate();
-  const [profiles, setprofiles] = useRecoilState(totalTweets);
+  const [profiles] = useRecoilState(totalTweets);
   const [Profiledata, setProfileData] = useState("");
   const { handlerName } = useParams();
   // console.log(handlerName);
@@ -23,7 +24,7 @@ function ProfilePage() {
   }
   useEffect(() => {
     findUserProfile(handlerName);
-  }, [profiles]);
+  }, [profiles,handlerName]);
   return (
     <>
       <div className="profilePage">
@@ -41,12 +42,10 @@ function ProfilePage() {
             <p>{Profiledata?.tweets?.length} Tweets</p>
           </div>
           <ProfileSection Profiledata={Profiledata} />
-          { Profiledata&& <ProfilePost Profiledata={Profiledata} />}
-          {/* <div className="block1"></div> */}
-          {/* <Post keys={Profiledata?.name} profiledata={Profiledata}/> */}
+          <div className="profilePost">{Profiledata && <Post profiledata={Profiledata} />}</div>
+          {/* { Profiledata&& <ProfilePost Profiledata={Profiledata} />} */}
         </div>
       </div>
-     {/*  */}
     </>
   );
 }

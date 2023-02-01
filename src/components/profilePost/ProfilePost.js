@@ -49,85 +49,85 @@ function ProfilePost({ Profiledata }) {
     setShare(share + 1);
   };
   return (
-    <div className="post">
+    <div className="profilePost">
       <div className="postAvatar">
         <Avatar src={profilePic} />
       </div>
 
-      <div className="postBody">
-        <div className="postHeader">
-          <div className="postHeaderText">
+      <div className="profilePostBody">
+        <div className="profilePostHeader">
+          <div className="profilePostHeaderText">
             <h3>
               {name}
-              <span className="postHeaderSpecial">
+              <span className="profilePostHeaderSpecial">
                 {verified && <VerifiedUserIcon className="postBadge" />}
                 {handlerName} - {joinedDate}
               </span>
             </h3>
           </div>
-          <div className="postHeaderDescription">
+          <div className="profilePostHeaderDescription">
             <p>{tweets[0].tweetText}</p>
           </div>
         </div>
         {tweets[0].tweetPic && (
-          <img className="img" src={tweets[0].tweetPic} alt="" />
+          <img className="profilePostImg" src={tweets[0].tweetPic} alt="" />
         )}
-        <div className="postFooter">
-          <div className="comment">
+        <div className="profilePostFooter">
+          <div className="profilePostcomment">
             <ChatBubbleOutlineIcon
               onClick={comments}
               fontSize="small"
-              className="chatBubble"
+              className="profilePostchatBubble"
               style={{ padding: ".5rem" }}
             />
-            <span className="postIcon" value={comment}>
+            <span className="profilePostIcon" value={comment}>
               {comment}K
             </span>
           </div>
-          <div className="retweet">
+          <div className="profilePostretweet">
             <RepeatIcon
               onClick={retweets}
               fontSize="small"
-              className="repeatIcon"
+              className="profilePostrepeatIcon"
               style={{ padding: ".5rem" }}
             />
-            <span className="postIcon" value={retweet}>
+            <span className="profilePostIcon" value={retweet}>
               {retweet}K
             </span>
           </div>
           {!True ? (
-            <div className="like">
+            <div className="profilePostlike">
               <FavoriteBorderIcon
                 onClick={likes}
                 fontSize="small"
-                className="FavouriteIcon"
+                className="profilePostFavouriteIcon"
                 style={{ padding: ".5rem" }}
               />
-              <span className="postIcon" value={like}>
+              <span className="profilePostIcon" value={like}>
                 {like}K
               </span>
             </div>
           ) : (
-            <div className="like">
+            <div className="profilePostlike">
               <FavoriteIcon
                 onClick={likes}
                 fontSize="small"
-                className="FavouriteIconClick"
+                className="profilePostFavouriteIconClick"
                 style={{ padding: ".5rem" }}
               />
-              <span className="postIcon" value={like}>
+              <span className="profilePostIcon" value={like}>
                 {like}K
               </span>
             </div>
           )}
-          <div className="share">
+          <div className="profilePostshare">
             <PublishIcon
               onClick={shares}
               fontSize="small"
-              className="publishIcon"
+              className="profilePostpublishIcon"
               style={{ padding: ".5rem" }}
             />
-            <span className="postIcon" value={share}>
+            <span className="profilePostIcon" value={share}>
               {share}K
             </span>
           </div>

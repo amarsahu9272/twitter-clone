@@ -4,6 +4,7 @@ import {  useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { totalTweets } from "../../recoil-states";
 import ProfilePost from "../profilePost/ProfilePost";
+import Post from "../post/Post";
 
 function TweetPage() {
 //   const navigate = useNavigate();
@@ -22,10 +23,10 @@ function TweetPage() {
     return
   }, [profiles,handleName]);
   return (
-  <>
-  {Profiledata && <ProfilePost Profiledata={Profiledata} />}
-
-  </>
+  <div className="tweetPage">
+    {Profiledata && <Post profiledata={Profiledata} />}
+  {/* {Profiledata && <ProfilePost Profiledata={Profiledata} />} */}
+  </div>
   );
 }
 
