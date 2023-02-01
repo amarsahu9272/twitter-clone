@@ -8,6 +8,8 @@ import ProfilePage from "./section/profilePage/ProfilePage";
 import NoMatchRoute from "./NoMatchRoute";
 import Feed from "./section/feed/Feed";
 import DemoProfilePage from "./components/demoProfilePage/DemoProfilePage";
+import TweetPage from "./components/tweetPage/TweetPage";
+
 
 function Router() {
   return (
@@ -18,6 +20,7 @@ function Router() {
             <Route index  element={<Feed />} />
             <Route path="DemoProfilePage" element={<DemoProfilePage />} />
             <Route path=":handlerName" element={<ProfilePage />} />
+            <Route path="TweetPage/:handleName" element={<TweetPage/>}/>
           </Route>
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />

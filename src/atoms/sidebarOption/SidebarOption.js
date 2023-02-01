@@ -17,7 +17,7 @@ function SidebarOption({ keys, active, text, Icon }) {
   } else if (keys === 6) {
     if (keys === 6) {
       return (
-        <Link to="/ProfilePage">
+        <Link to="/DemoProfilePage">
           <div
             key={keys}
             className={`sidebarOption ${active && "sidebarOption--active"}`}

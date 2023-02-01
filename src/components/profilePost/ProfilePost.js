@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import "./ProfilePost.css";
 
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
@@ -8,10 +8,11 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PublishIcon from "@mui/icons-material/Publish";
 import { Avatar } from "@mui/material";
-import { useSetRecoilState } from "recoil";
-import { profileDataAtom } from "../../recoil-states";
-import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import TweetsReply from "../tweetsReply/TweetsReply";
+import { postProfileClick } from "../../recoil-states";
 function ProfilePost({ Profiledata }) {
+  const postProfileClicks = useRecoilValue(postProfileClick);
   const {
     profilePic,
     name,
@@ -29,11 +30,11 @@ function ProfilePost({ Profiledata }) {
   let [share, setShare] = useState(4);
   let [True, setTrue] = useState(false);
 
-//   const setProfileData = useSetRecoilState(profileDataAtom);
-//   const handleProfileClick = () => {
-//     // console.log(profiledata);
-//     setProfileData(profiledata);
-//   };
+  //   const setProfileData = useSetRecoilState(profileDataAtom);
+  //   const handleProfileClick = () => {
+  //     // console.log(profiledata);
+  //     setProfileData(profiledata);
+  //   };
   const comments = () => {
     setComment(comment + 1);
   };
@@ -49,10 +50,10 @@ function ProfilePost({ Profiledata }) {
   };
   return (
     <div className="post">
-        <div className="postAvatar" >
+      <div className="postAvatar">
         <Avatar src={profilePic} />
-        </div>
-      
+      </div>
+
       <div className="postBody">
         <div className="postHeader">
           <div className="postHeaderText">
@@ -131,6 +132,7 @@ function ProfilePost({ Profiledata }) {
             </span>
           </div>
         </div>
+        {postProfileClicks && <TweetsReply tweets={tweets}/>}
       </div>
     </div>
   );

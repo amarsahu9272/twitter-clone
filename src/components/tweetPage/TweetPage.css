@@ -57,7 +57,7 @@
 
 .img {
     width: 100%;
-    height: 100%;
+    height: 100%rem;
     object-fit: contain;
     border-radius: 1.25rem;
 }
@@ -82,7 +82,8 @@
     background-color: rgb(246, 206, 206);
     border-radius: 50%;
 }
-.FavouriteIconClick{
+
+.FavouriteIconClick {
     color: red;
 }
 
