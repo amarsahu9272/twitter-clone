@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./ReplyDialogBox.css";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
+
 import {
+  Avatar,
   Dialog,
   DialogActions,
   DialogContent,
@@ -10,7 +13,19 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 
 import TweetReply from "../tweetReply/TweetReply";
-function ReplyDialogBox({ isVisible }) {
+import { Link } from "react-router-dom";
+function ReplyDialogBox({ isVisible, replyData }) {
+  const {
+    profilePic,
+    name,
+    verified,
+    handlerName,
+    // organization,
+    // followers,
+    // followings,
+    joinedDate,
+    tweets,
+  } = replyData;
   const [open, setOpen] = useState(false);
   useEffect(() => {
     setOpen(isVisible);
@@ -33,18 +48,45 @@ function ReplyDialogBox({ isVisible }) {
       >
         <div className="dialogBox">
           <DialogTitle id="dialog-title" className="dialogTitle">
-            <CloseIcon
-              onClick={() => setOpen(false)}
-              className="relpyCloseIcon"
-              style={{ padding: ".5rem" }}
-            />
+            <Link to="/">
+              <CloseIcon
+                onClick={() => setOpen(false)}
+                className="relpyCloseIcon"
+                style={{ padding: ".5rem" }}
+              />
+            </Link>
           </DialogTitle>
           <DialogContent>
             <DialogContentText
               id="dialog-description"
               className="dialogContent"
             >
-              <TweetReply />
+              <div className="replyDialog">
+                <div className="reply">
+                  <div className="replyAvatar">
+                    <Avatar src={profilePic} />
+                  </div>
+                  <div className="replyBody">
+                    <div className="replyHeader">
+                      <div className="replyHeaderText">
+                        <h3>
+                          {name}{" "}
+                          <span className="replyHeaderSpecial">
+                            {verified && (
+                              <VerifiedUserIcon className="replyBadge" />
+                            )}
+                            {handlerName} - {joinedDate}
+                          </span>
+                        </h3>
+                      </div>
+                      <div className="replyHeaderDescription">
+                        <p>{tweets[0].tweetText}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <TweetReply />
+              </div>
             </DialogContentText>
           </DialogContent>
           <DialogActions></DialogActions>

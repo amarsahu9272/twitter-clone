@@ -2,7 +2,7 @@ import React from "react";
 import "./Post.css";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import { Avatar } from "@mui/material";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { postProfileClick, profileDataAtom } from "../../recoil-states";
 import { Link } from "react-router-dom";
 import TweetsReply from "../tweetsReply/TweetsReply";
@@ -21,16 +21,15 @@ function Post({ profiledata }) {
     tweets,
   } = profiledata;
 
-  
+  // const [postBody, setPostBody] = useState(false);
   const setProfileData = useSetRecoilState(profileDataAtom);
-  const setPostProfileData = useSetRecoilState(postProfileClick);
-  const postProfileClicks = useRecoilValue(postProfileClick);
+  const [postClick, setPostClick] = useRecoilState(postProfileClick);
   const handleProfileClick = () => {
     setProfileData(profiledata);
-    setPostProfileData(false);
   };
   const handlePostBody = () => {
-    setPostProfileData(true);
+    // setPostBody(true);
+    setPostClick(true);
   };
 
   return (
@@ -62,8 +61,12 @@ function Post({ profiledata }) {
             )}
           </Link>
         </div>
-        <PostFooterIcon tweets={tweets}/>
-        {postProfileClicks && <TweetsReply tweets={tweets} />}
+        <PostFooterIcon
+          profiledata={profiledata}
+          // tweets={tweets}
+        />
+        {/* {!postBody && <TweetsReply tweets={tweets} postBody={postBody} />} */}
+        {postClick && <TweetsReply tweets={tweets} postClick={postClick} />}
       </div>
     </div>
   );

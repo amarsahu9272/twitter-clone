@@ -4,25 +4,27 @@ import WhatsHappeningTweets from "../../components/whatsHappeningTweets/WhatsHap
 import TweetFooterIcons from "../../atoms/tweetFooterIcons/TweetFooterIcons";
 import TwitterButton from "../../atoms/twitterButton/TwitterButton";
 
-function TweetReply() {
+function TweetReply({ postBody }) {
   const [tweetReply, setTweetReply] = useState("");
   return (
-    <div className="tweetBox">
+    <div className="tweetReplyContainer">
       <form onSubmit="">
-        <WhatsHappeningTweets
-          btnStyle="WhatsHappeningTweets"
-          placeHolder="Tweet your reply"
-          values={tweetReply}
-          handleChange={(e) => setTweetReply(e.target.value)}
-        />
-        <div className="tweetFooter">
-          <TweetFooterIcons />
-          <TwitterButton
-            // onClickAction={handleReply}
-            btnText="Reply"
-            variant="outlined"
-            btnStyle="tweetBoxButton"
+        <div className="tweetReplyWrapper">
+          <WhatsHappeningTweets
+            btnStyle="tweetReply"
+            placeHolder="Tweet your reply"
+            values={tweetReply}
+            handleChange={(e) => setTweetReply(e.target.value)}
           />
+          <div className="tweetFooter">
+            <TweetFooterIcons />
+            <TwitterButton
+              // onClickAction={handleReply}
+              btnText="Reply"
+              variant="outlined"
+              btnStyle="tweetBoxButton"
+            />
+          </div>
         </div>
       </form>
     </div>

@@ -9,6 +9,7 @@ import NoMatchRoute from "./NoMatchRoute";
 import Feed from "./section/feed/Feed";
 import DemoProfilePage from "./components/demoProfilePage/DemoProfilePage";
 import TweetPage from "./components/tweetPage/TweetPage";
+import TweetYourReply from "./components/tweetYourReply/TweetYourReply";
 
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
             <Route path="DemoProfilePage" element={<DemoProfilePage />} />
             <Route path=":handlerName" element={<ProfilePage />} />
             <Route path="TweetPage/:handleName" element={<TweetPage/>}/>
+            <Route path="TweetYourReply/:handlerName" element={<TweetYourReply/>}/>
           </Route>
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />

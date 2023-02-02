@@ -1,11 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { postProfileClick } from "../../recoil-states";
 import "./SidebarOption.css";
 function SidebarOption({ keys, active, text, Icon }) {
+  const setPostProfileClick = useSetRecoilState(postProfileClick);
+
+  function handleHomeClick() {
+    setPostProfileClick(false);
+  }
+
   if (keys === 0) {
     return (
       <Link to="/">
         <div
+          onClick={handleHomeClick}
           key={keys}
           className={`sidebarOption ${active && "sidebarOption--active"}`}
         >

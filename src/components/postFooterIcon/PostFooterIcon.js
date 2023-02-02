@@ -5,10 +5,22 @@ import RepeatIcon from "@mui/icons-material/Repeat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PublishIcon from "@mui/icons-material/Publish";
-import ReplyDialogBox from "../replyDialogBox/ReplyDialogBox";
+// import ReplyDialogBox from "../replyDialogBox/ReplyDialogBox";
+import { Link } from "react-router-dom";
 
-function PostFooterIcon({tweets}) {
-  const [isVisible, setIsVisible] = useState(false);
+function PostFooterIcon({ profiledata }) {
+  const {
+    // profilePic,
+    // name,
+    // verified,
+    handlerName,
+    // organization,
+    // followers,
+    // followings,
+    // joinedDate,
+    tweets,
+  } = profiledata;
+  // const [isVisible, setIsVisible] = useState(false);
   let [comment, setComment] = useState(tweets[0].tweetCount);
   let [retweet, setRetweet] = useState(tweets[0].retweetCount);
   let [like, setLike] = useState(tweets[0].likesCount);
@@ -17,7 +29,7 @@ function PostFooterIcon({tweets}) {
 
   const comments = () => {
     setComment(comment + 1);
-    setIsVisible(true);
+    // setIsVisible(true);
   };
   const retweets = () => {
     setRetweet(retweet + 1);
@@ -34,13 +46,15 @@ function PostFooterIcon({tweets}) {
     <>
       <div className="postFooter">
         <div className="comment">
-          <ChatBubbleOutlineIcon
-            onClick={comments}
-            fontSize="small"
-            className="chatBubble"
-            style={{ padding: ".5rem" }}
-          />
-          <ReplyDialogBox isVisible={isVisible} />
+          <Link to={`/TweetYourReply/${handlerName}`}>
+            <ChatBubbleOutlineIcon
+              onClick={comments}
+              fontSize="small"
+              className="chatBubble"
+              style={{ padding: ".5rem" }}
+            />
+          </Link>
+          {/* <ReplyDialogBox isVisible={isVisible} /> */}
           <span className="postIcon" value={comment}>
             {comment}
           </span>

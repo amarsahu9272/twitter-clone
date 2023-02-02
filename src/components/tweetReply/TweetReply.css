@@ -1,0 +1,50 @@
+.tweetReplyContainer {
+    padding-bottom: .625rem;
+    /* border-bottom: .5rem solid var(--twitter-background); */
+    padding-right: .625rem;
+}
+
+.tweetReplyContainer>form {
+    display: flex;
+    flex-direction: column;
+}
+.tweetReplyWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+/* .tweetReplyWrapper::-webkit-scrollbar {
+    display: none;
+} */
+
+
+
+/* .tweetReply {
+    padding: 1.25rem;
+    display: flex;
+}
+
+.tweetReply>input {
+    flex: 1;
+    margin-left: 1.25rem;
+    font-size: 1.25rem;
+    border: none;
+    outline: none;
+}
+
+.tweetReply {
+    border: none;
+    padding: .625rem;
+    outline: none;
+}
+
+.avatar {
+    cursor: pointer;
+
+}
+
+.selectImage>img {
+    width: 400px;
+    height: 250px;
+    object-fit: contain;
+} */

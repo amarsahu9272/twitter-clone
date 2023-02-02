@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
-import { isUserLoggedInAtom } from "../recoil-states";
+import { isUserLoggedInAtom} from "../recoil-states";
 import { useNavigate } from "react-router-dom";
 import App from "../App";
 
@@ -17,8 +17,7 @@ export default function HomePage() {
     <>
       {/* <h1>Welcome to the home page !!</h1> */}
       {/* <App/> */}
-      {isUserLoggedIn && <App/>}
-
+      {isUserLoggedIn && <App />}
     </>
   );
 }

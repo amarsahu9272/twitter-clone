@@ -7,13 +7,22 @@ import SidebarOption from "../../atoms/sidebarOption/SidebarOption";
 import ProfileButton from "../../atoms/profileButton/ProfileButton";
 import DialogBox from "../../components/dialogbox/DialogBox";
 import { Link } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { postProfileClick } from "../../recoil-states";
 function Sidebar() {
+  const setPostProfileClick = useSetRecoilState(postProfileClick);
+
+  function handleTwitterIconClick() {
+    setPostProfileClick(false);
+  }
   return (
     <div className="sidebar">
       {/* <TwitterIcon /> */}
-      <Link to="/">
-        <TwitterIconn />
-      </Link>
+      <div onClick={handleTwitterIconClick}>
+        <Link to="/">
+          <TwitterIconn />
+        </Link>
+      </div>
       {sideBarIcons.map((icon, i) => (
         <div key={i}>
           {" "}
