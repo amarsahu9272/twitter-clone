@@ -33,5 +33,5 @@ export const totalTweets = atom({
 
 export const postProfileClick = atom({
   key: "postProfileClick",
-  default: true,
+  default: false,
 });

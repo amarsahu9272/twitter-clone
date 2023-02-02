@@ -7,10 +7,14 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import PublishIcon from "@mui/icons-material/Publish";
 import { Avatar } from "@mui/material";
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { postProfileClick, profileDataAtom } from "../../recoil-states";
 import { Link } from "react-router-dom";
+import TweetsReply from "../tweetsReply/TweetsReply";
+
+
 function Post({ profiledata }) {
+  const postProfileClicks = useRecoilValue(postProfileClick);
   const {
     profilePic,
     name,
@@ -22,8 +26,6 @@ function Post({ profiledata }) {
     joinedDate,
     tweets,
   } = profiledata;
-  // const tweets = tweets
-  // const [Tweets,setTweets]=useState(tweets)
   let [comment, setComment] = useState(tweets[0].tweetCount);
   let [retweet, setRetweet] = useState(tweets[0].retweetCount);
   let [like, setLike] = useState(tweets[0].likesCount);
@@ -31,15 +33,14 @@ function Post({ profiledata }) {
   let [True, setTrue] = useState(false);
 
   const setProfileData = useSetRecoilState(profileDataAtom);
-  const setPostProfileData =useSetRecoilState(postProfileClick)
+  const setPostProfileData = useSetRecoilState(postProfileClick);
   const handleProfileClick = () => {
-    // console.log(profiledata);
     setProfileData(profiledata);
-    setPostProfileData(false)
+    setPostProfileData(false);
   };
-  const handlePostBody=()=>{
-    setPostProfileData(true)
-  }
+  const handlePostBody = () => {
+    setPostProfileData(true);
+  };
   const comments = () => {
     setComment(comment + 1);
   };
@@ -140,6 +141,7 @@ function Post({ profiledata }) {
             </span>
           </div>
         </div>
+        {postProfileClicks && <TweetsReply tweets={tweets} />}
       </div>
     </div>
   );
