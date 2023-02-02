@@ -18,8 +18,8 @@ function Feed() {
 
       <TweetBox />
 
-      {tweetPosts.map((post) => (
-        <Post key={post.name} profiledata={post} />
+      {tweetPosts.map((post, i) => (
+        <Post key={i} profiledata={post} />
       ))}
     </div>
   );

@@ -35,3 +35,8 @@ export const postProfileClick = atom({
   key: "postProfileClick",
   default: false,
 });
+
+export const isReplyClick = atom({
+  key: "replyClick",
+  default: false,
+});

@@ -10,6 +10,7 @@ import CloseIcon from "@mui/icons-material/Close";
 function WhatsHappeningTweets({
   values,
   handleChange,
+  placeHolder,
   tweetImage,
   handleTweetImage,
 }) {
@@ -24,7 +25,7 @@ function WhatsHappeningTweets({
         <input
           onChange={handleChange}
           value={values}
-          placeholder="What's happening?"
+          placeholder={placeHolder}
           type="text"
         />
       </div>

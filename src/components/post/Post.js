@@ -11,7 +11,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { postProfileClick, profileDataAtom } from "../../recoil-states";
 import { Link } from "react-router-dom";
 import TweetsReply from "../tweetsReply/TweetsReply";
-
+import ReplyDialogBox from "../replyDialogBox/ReplyDialogBox";
 
 function Post({ profiledata }) {
   const postProfileClicks = useRecoilValue(postProfileClick);
@@ -26,7 +26,9 @@ function Post({ profiledata }) {
     joinedDate,
     tweets,
   } = profiledata;
+  const [isVisible, setIsVisible] = useState(false);
   let [comment, setComment] = useState(tweets[0].tweetCount);
+  console.log("tweeetCount", tweets[0].tweetCount);
   let [retweet, setRetweet] = useState(tweets[0].retweetCount);
   let [like, setLike] = useState(tweets[0].likesCount);
   let [share, setShare] = useState(0);
@@ -34,6 +36,13 @@ function Post({ profiledata }) {
 
   const setProfileData = useSetRecoilState(profileDataAtom);
   const setPostProfileData = useSetRecoilState(postProfileClick);
+
+  const openDialogBox = () => {
+    setIsVisible(true);
+  };
+  // const closeDialogBox = () => {
+  //   setIsVisible(false);
+  // };
   const handleProfileClick = () => {
     setProfileData(profiledata);
     setPostProfileData(false);
@@ -43,6 +52,8 @@ function Post({ profiledata }) {
   };
   const comments = () => {
     setComment(comment + 1);
+    // setIsReplyClicked(true);
+    openDialogBox();
   };
   const retweets = () => {
     setRetweet(retweet + 1);
@@ -93,6 +104,7 @@ function Post({ profiledata }) {
               {comment}
             </span>
           </div>
+          <ReplyDialogBox isVisible={isVisible} />
           <div className="retweet">
             <RepeatIcon
               onClick={retweets}

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./DialogBox.css";
+import React, { useEffect, useState } from "react";
+import "./ReplyDialogBox.css";
 import {
   // Button,
   Dialog,
@@ -9,28 +9,26 @@ import {
   DialogTitle,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import TwitterButton from "../../atoms/twitterButton/TwitterButton";
-import TweetBox from "../tweetBox/TweetBox";
-function DialogBox() {
+
+import TweetReply from "../tweetReply/TweetReply";
+function ReplyDialogBox({ isVisible }) {
   const [open, setOpen] = useState(false);
+  const openDialog = () => setOpen(true);
+  const closeDialog = () => setOpen(false);
+  useEffect(()=>{
+    setOpen(isVisible);
+    },[isVisible]);
   return (
     <>
-      {/* <Button onClick={() => setOpen(true)}>opendialog</Button> */}
-      <TwitterButton
-        onClickAction={() => setOpen(true)}
-        btnText="Tweet"
-        variant="outlined"
-        btnStyle="sidebar__tweet"
-      />
       <Dialog
         className="dialog"
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={closeDialog}
         PaperProps={{
           style: {
             width: "40%",
-            height: "45%",
-            marginTop: "-18rem",
+            height: "60%",
+            marginTop: "-12rem",
             marginLeft: "2rem",
             borderRadius: "1rem",
           },
@@ -49,7 +47,7 @@ function DialogBox() {
               id="dialog-description"
               className="dialogContent"
             >
-              <TweetBox showMore={true} />
+              <TweetReply />
             </DialogContentText>
           </DialogContent>
           <DialogActions>
@@ -64,4 +62,4 @@ function DialogBox() {
   );
 }
 
-export default DialogBox;
+export default ReplyDialogBox;

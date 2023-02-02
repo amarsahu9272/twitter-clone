@@ -8,7 +8,7 @@ import ShowTweet from "../../atoms/showTweet/ShowTweet";
 import { useRecoilState } from "recoil";
 import { selectFile, totalTweets } from "../../recoil-states";
 
-function TweetBox() {
+function TweetBox({showMore}) {
   const [tweets, setTweets] = useRecoilState(totalTweets);
   const [selectedFile, setSelectedFile] = useRecoilState(selectFile);
   const [tweetMessage, setTweetMessage] = useState("");
@@ -16,7 +16,7 @@ function TweetBox() {
 
   const sendTweet = (e) => {
     e.preventDefault();
-    console.log("TweetMessage",tweetMessage)
+    // console.log("TweetMessage",tweetMessage)
     let obj = {
       profilePic: profilePic,
       name: "Amar",
@@ -62,13 +62,14 @@ function TweetBox() {
       <form onSubmit={sendTweet}>
         <WhatsHappeningTweets
           btnStyle="WhatsHappeningTweets"
+          placeHolder="What's happening?"
           values={tweetMessage}
           handleChange={(e) => setTweetMessage(e.target.value)}
           tweetImage={tweetImage}
           handleTweetImage={(e) => setTweetImage(e.target.value)}
         />
         <TweetFooter handleClick={sendTweet} />
-        <ShowTweet />
+        {!showMore?<ShowTweet />:""}
       </form>
     </div>
   );
