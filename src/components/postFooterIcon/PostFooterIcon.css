@@ -1,0 +1,64 @@
+.postFooter {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+}
+
+
+.comment {
+    display: flex;
+    align-items: center;
+}
+
+.retweet {
+    display: flex;
+    align-items: center;
+}
+
+.like {
+    display: flex;
+    align-items: center;
+}
+
+.share {
+    display: flex;
+    align-items: center;
+}
+
+.chatBubble:hover {
+    color: var(--twitter-color);
+    /* background-color: #e8f5fe; */
+    background-color: rgb(214, 248, 252);
+    border-radius: 50%;
+}
+
+.repeatIcon:hover {
+    color: rgb(5, 206, 156);
+    /* background-color: #e8f5fe; */
+    background-color: rgb(200, 248, 236);
+    border-radius: 50%;
+}
+
+.FavouriteIcon:hover {
+    color: red;
+    /* background-color: #e8f5fe; */
+    background-color: rgb(246, 206, 206);
+    border-radius: 50%;
+}
+
+.FavouriteIconClick {
+    color: red;
+}
+
+.publishIcon:hover {
+    color: rgb(5, 206, 156);
+    /* background-color: #e8f5fe; */
+    background-color: rgb(200, 248, 236);
+    border-radius: 50%;
+
+}
+
+.postIcon {
+    margin-bottom: .3rem;
+    /* color: red; */
+}
