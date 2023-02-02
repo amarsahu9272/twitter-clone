@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ReplyDialogBox.css";
 import {
-  // Button,
   Dialog,
   DialogActions,
   DialogContent,
@@ -13,17 +12,15 @@ import CloseIcon from "@mui/icons-material/Close";
 import TweetReply from "../tweetReply/TweetReply";
 function ReplyDialogBox({ isVisible }) {
   const [open, setOpen] = useState(false);
-  const openDialog = () => setOpen(true);
-  const closeDialog = () => setOpen(false);
-  useEffect(()=>{
+  useEffect(() => {
     setOpen(isVisible);
-    },[isVisible]);
+  }, [isVisible]);
   return (
     <>
       <Dialog
         className="dialog"
         open={open}
-        onClose={closeDialog}
+        onClose={() => setOpen(false)}
         PaperProps={{
           style: {
             width: "40%",
@@ -38,7 +35,7 @@ function ReplyDialogBox({ isVisible }) {
           <DialogTitle id="dialog-title" className="dialogTitle">
             <CloseIcon
               onClick={() => setOpen(false)}
-              className="closeIcon"
+              className="relpyCloseIcon"
               style={{ padding: ".5rem" }}
             />
           </DialogTitle>
@@ -50,12 +47,7 @@ function ReplyDialogBox({ isVisible }) {
               <TweetReply />
             </DialogContentText>
           </DialogContent>
-          <DialogActions>
-            {/* <Button onClick={() => setOpen(false)}>cancel</Button>
-          <Button autoFocus onClick={() => setOpen(false)}>
-            submit
-          </Button> */}
-          </DialogActions>
+          <DialogActions></DialogActions>
         </div>
       </Dialog>
     </>

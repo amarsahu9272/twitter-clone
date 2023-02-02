@@ -28,7 +28,6 @@ function Post({ profiledata }) {
   } = profiledata;
   const [isVisible, setIsVisible] = useState(false);
   let [comment, setComment] = useState(tweets[0].tweetCount);
-  console.log("tweeetCount", tweets[0].tweetCount);
   let [retweet, setRetweet] = useState(tweets[0].retweetCount);
   let [like, setLike] = useState(tweets[0].likesCount);
   let [share, setShare] = useState(0);
@@ -36,13 +35,6 @@ function Post({ profiledata }) {
 
   const setProfileData = useSetRecoilState(profileDataAtom);
   const setPostProfileData = useSetRecoilState(postProfileClick);
-
-  const openDialogBox = () => {
-    setIsVisible(true);
-  };
-  // const closeDialogBox = () => {
-  //   setIsVisible(false);
-  // };
   const handleProfileClick = () => {
     setProfileData(profiledata);
     setPostProfileData(false);
@@ -52,8 +44,8 @@ function Post({ profiledata }) {
   };
   const comments = () => {
     setComment(comment + 1);
-    // setIsReplyClicked(true);
-    openDialogBox();
+    // openDialogBox();
+    setIsVisible(true);
   };
   const retweets = () => {
     setRetweet(retweet + 1);
@@ -72,26 +64,28 @@ function Post({ profiledata }) {
           <Avatar src={profilePic} />
         </div>
       </Link>
-      <div className="postBody" onClick={handlePostBody}>
-        <Link to={`/TweetPage/${handlerName}`}>
-          <div className="postHeader">
-            <div className="postHeaderText">
-              <h3>
-                {name}{" "}
-                <span className="postHeaderSpecial">
-                  {verified && <VerifiedUserIcon className="postBadge" />}
-                  {handlerName} - {joinedDate}
-                </span>
-              </h3>
+      <div className="postBody">
+        <div onClick={handlePostBody}>
+          <Link to={`/TweetPage/${handlerName}`}>
+            <div className="postHeader">
+              <div className="postHeaderText">
+                <h3>
+                  {name}{" "}
+                  <span className="postHeaderSpecial">
+                    {verified && <VerifiedUserIcon className="postBadge" />}
+                    {handlerName} - {joinedDate}
+                  </span>
+                </h3>
+              </div>
+              <div className="postHeaderDescription">
+                <p>{tweets[0].tweetText}</p>
+              </div>
             </div>
-            <div className="postHeaderDescription">
-              <p>{tweets[0].tweetText}</p>
-            </div>
-          </div>
-          {tweets[0].tweetPic && (
-            <img className="img" src={tweets[0].tweetPic} alt="" />
-          )}
-        </Link>
+            {tweets[0].tweetPic && (
+              <img className="img" src={tweets[0].tweetPic} alt="" />
+            )}
+          </Link>
+        </div>
         <div className="postFooter">
           <div className="comment">
             <ChatBubbleOutlineIcon
@@ -100,11 +94,12 @@ function Post({ profiledata }) {
               className="chatBubble"
               style={{ padding: ".5rem" }}
             />
+            <ReplyDialogBox isVisible={isVisible} />
             <span className="postIcon" value={comment}>
               {comment}
             </span>
           </div>
-          <ReplyDialogBox isVisible={isVisible} />
+          {/* <ReplyDialogBox isVisible={isVisible} /> */}
           <div className="retweet">
             <RepeatIcon
               onClick={retweets}
